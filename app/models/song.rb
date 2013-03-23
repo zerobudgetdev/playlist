@@ -10,6 +10,5 @@ class Song < ActiveRecord::Base
 			:s3_credentials => YAML.load(ERB.new(File.read(Rails.root + 'config/s3.yml.erb')).result(binding))
 		}
 	end
-
 	attr_accessible :file
 end

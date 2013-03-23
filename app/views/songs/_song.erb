@@ -16,9 +16,9 @@
   </td>
   <% if is_user_playlist?(song.playlist) %>
     <td>
-      <%# this is where to put a link to delete the song, with a javascript confirmation %>
+      <%= link_to(playlist_song_path(song.playlist, song), :method => :delete, :confirm => "Are you sure you want to delete #{song.file.original_filename}?") do %>
         <button type="button" class="btn btn-danger"><i class="icon-trash"></i> Delete</button>
-      <%# end %>
+      <% end %>
     </td>
   <% end %>
   </div>
